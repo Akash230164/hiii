@@ -6,8 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    color: red; /* Text color for paragraphs */
-    background: #000; /* Fallback background color */
+    background-color: #000; /* Default background color */
+    color: red; /* Default text color */
 }
 
 .container {
@@ -25,20 +25,21 @@ h1 {
     margin-bottom: 20px;
     text-align: center;
     animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
-    white-space: nowrap; /* To make sure the heading text stays on one line */
-    overflow: hidden; /* Hide the text before animation */
+    white-space: nowrap; /* Keeps heading text on one line */
+    overflow: hidden; /* Hide text before animation */
     border-right: 4px solid red; /* Blinking cursor effect */
 }
 
 p {
     font-size: 1.5em;
-    margin-bottom: 40px; /* Space below the paragraph */
+    margin-bottom: 40px; /* Space below paragraph */
     color: red; /* Paragraph text color */
-    white-space: pre-wrap; /* Ensures long texts break into new lines */
-    word-wrap: break-word; /* Break long words if necessary */
+    white-space: pre-wrap; /* Allows text to wrap on new lines as typed */
+    word-wrap: break-word; /* Ensures long words break correctly */
+    line-height: 1.5; /* Add line spacing for better readability */
     animation: typing 4s steps(60) forwards, blink 0.75s step-end infinite;
     border-right: 4px solid red; /* Blinking cursor for live typing effect */
-    overflow: hidden; /* Hide the text before the typing animation */
+    overflow: hidden; /* Hide text before typing animation */
 }
 
 .image-container {
@@ -64,7 +65,7 @@ p {
 .nav-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Add margin above the buttons */
+    margin-top: 20px;
 }
 
 .button {
@@ -116,6 +117,8 @@ p {
         opacity: 1;
     }
 }
+
+
 
 
 
