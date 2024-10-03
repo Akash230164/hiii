@@ -23,17 +23,26 @@ body {
 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    text-align: center;
+    animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
+    white-space: nowrap; /* To make sure the heading text stays on one line */
+    overflow: hidden; /* Hide the text before animation */
+    border-right: 4px solid red; /* Blinking cursor effect */
 }
 
 p {
     font-size: 1.5em;
     margin-bottom: 40px; /* Space below the paragraph */
-    color: red; /* Change paragraph text color */
+    color: red; /* Paragraph text color */
     white-space: pre-wrap; /* Ensures long texts break into new lines */
+    word-wrap: break-word; /* Break long words if necessary */
+    animation: typing 4s steps(60) forwards, blink 0.75s step-end infinite;
+    border-right: 4px solid red; /* Blinking cursor for live typing effect */
+    overflow: hidden; /* Hide the text before the typing animation */
 }
 
 .image-container {
-    position: absolute; /* Position the image container absolutely */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,8 +65,6 @@ p {
     display: flex;
     justify-content: center;
     margin-top: 20px; /* Add margin above the buttons */
-    position: relative; /* Ensure buttons are positioned correctly */
-    z-index: 1; /* Higher z-index to ensure they are clickable */
 }
 
 .button {
@@ -67,7 +74,7 @@ p {
     color: #000;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s; /* Animation effects */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .button:hover {
@@ -75,7 +82,7 @@ p {
     transform: scale(1.05);
 }
 
-/* Live typing animation for headings and paragraphs */
+/* Typing and blinking animation for headings and paragraphs */
 @keyframes typing {
     from {
         width: 0;
@@ -85,13 +92,13 @@ p {
     }
 }
 
-.live-text {
-    overflow: hidden; /* Ensures no text is visible until animated */
-    white-space: pre-wrap; /* Allows text to wrap and break lines */
-    border-right: 4px solid red; /* Cursor effect */
-    width: 100%; /* Full width for the typing effect */
-    animation: typing 3s steps(30) forwards; /* Adjust duration and steps as needed */
-    font-family: 'Courier New', monospace; /* Optional: change font for typing effect */
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: red;
+    }
 }
 
 /* Slow pop animation for images */
@@ -109,4 +116,5 @@ p {
         opacity: 1;
     }
 }
+
 
