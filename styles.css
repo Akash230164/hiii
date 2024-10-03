@@ -28,7 +28,8 @@ h1 {
 p {
     font-size: 1.5em;
     margin-bottom: 40px; /* Space below the paragraph */
-    color: black; /* Change paragraph text color */
+    color: red; /* Change paragraph text color */
+    white-space: pre-wrap; /* Ensures long texts break into new lines */
 }
 
 .image-container {
@@ -86,7 +87,7 @@ p {
 
 .live-text {
     overflow: hidden; /* Ensures no text is visible until animated */
-    white-space: nowrap; /* Prevents text from wrapping */
+    white-space: pre-wrap; /* Allows text to wrap and break lines */
     border-right: 4px solid red; /* Cursor effect */
     width: 100%; /* Full width for the typing effect */
     animation: typing 3s steps(30) forwards; /* Adjust duration and steps as needed */
@@ -108,3 +109,4 @@ p {
         opacity: 1;
     }
 }
+
